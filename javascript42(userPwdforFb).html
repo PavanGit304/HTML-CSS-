@@ -1,0 +1,41 @@
+<html>
+<head>
+<script>
+function check()
+{
+if(document.f1.um.value=="")
+{
+alert("Plz enter User name");
+return false;
+}
+if(document.f1.pwd.value=="")
+{
+alert("Plz enter Password");
+return false;
+}
+}
+function f2()
+{
+window.location.href=" https://www.google.com/search?q=selenium&rlz=1C1AVFC_enZA889ZA889&oq=selenium+&aqs=chrome..69i57j35i39l2j0i433i512l2j0i512l2j69i60.2129j0j7&sourceid=chrome&ie=UTF-8 "
+}
+</script>
+</head>
+
+<body bgcolor=lightblue>
+<form method=POST action=a.html onsubmit="return check();"name="f1">
+<table border=0>
+<tr>
+<td>Enter Username</td>
+<td><input type="text" name="um" id="un"></td>
+</tr>
+<tr>
+<td>Enter Password</td>
+<td><input type="password" name="pwd"></td>
+</tr>
+</table>
+<input type="submit" name="sm" id="s" value="Submit">
+<input type="Reset"><br>
+<img src=Hydrangeas.jpg width=200 height=200 onclick="f2();">
+</form>
+</body>
+</html>

@@ -1,0 +1,8 @@
+body{background-image: url("Penguins.jpg");
+ background-repeat :no-repeat;   /*it doesn't repeat the image  */
+ background-attachment : fixed;  /*it fiex the img */
+ background-size:cover;          /*it cover the background*/
+ background-position: center;
+}
+h1{color :Green}
+p{ color: red}

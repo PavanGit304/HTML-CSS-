@@ -1,0 +1,191 @@
+<html>
+<head>
+<style> 
+body {
+  height: 7500px;
+  width: 500px;
+}
+
+p{           
+ position: absolute;
+  bottom: 8px;
+  left: 16px;
+  font-size: 18px;
+  color: Lightblue;
+align:center;
+ 
+
+}
+</style>  <!using p{} we can set the link to bottom      body{}for scrolldown> 
+<script>
+function check() // check function
+{
+if(document.f1.unm.value=="")
+{
+alert("Username should not be left blank");
+document.getElementById('u').focus();
+return false;
+}
+else
+{
+s=document.f1.unm.value;
+for(i=0;i<s.length;i++)
+{	
+chr=s.charCodeAt(i);
+if(!(( chr>=65 && chr<=90 ) || ( chr>=97 && chr<=122 )))
+{
+alert("Username must contain only Alphabets");
+document.f1.unm.value=""
+document.getElementById('u').focus();
+return false;
+}
+}
+}
+/* ---------------------------------------------------- */
+if(document.f1.pwd.value=="")
+{
+alert("Password should not be left blank");
+document.getElementById('p').focus();
+return false;
+}
+/* ---------------------------------------------------- */
+if(document.getElementById('s0').checked!=true && document.getElementById('s1').checked!=true)
+{
+alert("Please select Gender");
+return false;
+}
+/* ---------------------------------------------------- */
+if(document.getElementById('c0').checked!=true && document.getElementById('c1').checked!=true)
+{
+alert("Please select Vehicle");
+return false;
+}
+if(document.getElementById('c1').checked==true)
+{
+if(document.f1.cars.selectedIndex==0)
+{
+alert("Plz select your Car");
+return false;
+}
+}
+if(document.f1.cv.selectedIndex==-1)
+{
+alert("Plz select visited Country");
+return false;
+}
+if(document.f1.ftrip.value=="")
+{
+alert("Plz Describe your favorite airplane trip");
+document.f1.ftrip.value==""
+document.getElementById('ft').focus();
+return false;
+}
+s=document.f1.email.value;
+at=s.indexOf('@');
+atat=s.indexOf('@',at+1);
+dot=s.indexOf('.');
+len=s.length;
+adj = s.charAt(at+1);
+lchar = s.charAt(len-1);
+if(s=="")
+{
+alert("Plz enter your Email id");
+document.getElementById('em').focus();
+return false;
+}
+else
+{
+if(at<1 || dot==-1 || atat!=-1 || (lchar==".") || (adj=="."))
+{
+alert("Plz enter valid Email");
+document.f1.email.value=""
+document.getElementById('em').focus();
+return false;
+}
+}
+if(document.f1.resume.value=="")
+{
+alert("Plz Upload your Resume");
+document.f1.resume.value==""
+document.getElementById('res').focus();
+return false;
+}
+}
+</script>
+</head>
+ 
+<body  bgcolor= lightblue>            <!background ="images.jfif" height= 100% width = 100% align="top">
+<div align="center">                <!it set form in center by using body{} width and hight >
+<form method=POST action= ex1.html  name="f1" onsubmit="return check();" algin:center>
+<table>
+<tr>
+<td> Username &nbsp                 <! &nbsp Non-breaking Space>	
+ <input type=text name=unm id=u></td></tr>
+<br>
+<tr>
+<td>Password &nbsp 
+<input type=password name=pwd id=p></td>
+</tr>
+
+<tr>
+<td>Gender
+ <input type=radio name=gd  value=m  id=s0>Male
+<input type=radio name=gd  value=f    id=s1>Female 
+</td></tr>
+
+<tr>
+<td>Choose your vehicle :
+<input type=checkbox name=interest id=c0>Bike
+<input type=checkbox name=interest id=c1>Car 
+<input type=checkbox name=interest id=c2>Cycle 
+<input type=checkbox name=interest id=c3>Bus 
+</td>
+</tr>
+
+<tr>
+<td>Choose your Car :
+
+<select name="cars" id="cr">
+
+<option value=""> Plz select </option>
+<option value="Santro"> Santro</option>
+<option value="Maruthi"> Maruthi</option>
+<option value="Wagon-R"> Wagon-R</option>
+</select></td>
+</tr>
+
+<tr>
+<td>Which Country you like to visit?
+<br>
+<select multiple size=3 name=cv>
+<option value=usa>America
+<option value=europe>Europe
+<option value=asia>Asia
+<option value=australia>Australia
+</select></td></tr>
+
+<tr><td>
+Describe your favorite Aeroplane trip:
+<br>
+<textarea name=ftrip rows=5 cols=50 id=ft></textarea>
+ <br><br>
+E-mail : <input type=text name=email  id=em> </td></tr>
+
+<tr>
+<td><br>Resume : <input type=file name=resume id=res> </td></tr>
+
+<tr>
+<td><br>
+&nbsp <input  type=reset name=clear id=c value=Reset>&nbsp&nbsp&nbsp&nbsp&nbsp <input id=sub type=submit  value="Submit" ></td></tr>
+
+</table>
+
+</form>
+</div>
+
+<p><a href="https://www.google.com/" style="color:lightblue;"> To Search  </a> </p>    <! paragraph set the link to the bottom>      
+</body>
+
+
+</html>
+

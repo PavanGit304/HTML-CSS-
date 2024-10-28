@@ -1,0 +1,82 @@
+<html>
+<head>
+<style> 
+body {
+  height: 7500px;
+  width: 500px;
+}
+
+
+div {
+    height: 200px;
+    width: 400px;
+    
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -200px;
+}
+</style>  <!using p{} we can set the link to bottom      body{}for scrolldown> 
+<script>
+function check() // check function
+{
+if(document.f1.unm.value=="")
+{
+alert("Username should not be left blank");
+document.getElementById('u').focus();
+return false;
+}
+else
+{
+s=document.f1.unm.value;
+for(i=0;i<s.length;i++)
+{	
+chr=s.charCodeAt(i);
+if(!(( chr>=65 && chr<=90 ) || ( chr>=97 && chr<=122 )))
+{
+alert("Username must contain only Alphabets");
+document.f1.unm.value=""
+document.getElementById('u').focus();
+return false;
+}
+}
+}
+/* ---------------------------------------------------- */
+if(document.f1.pwd.value=="")
+{
+alert("Password should not be left blank");
+document.getElementById('p').focus();
+return false;
+}
+
+
+}
+}
+</script>
+</head>
+ 
+<body  bgcolor= tan>            <!background ="images.jfif" height= 100% width = 100% align="top">
+<div align="center">                <!it set form in center by using body{} width and hight >
+<form method=POST action= JavascriptMainPage.html  name="f1" onsubmit="return check();" algin:center>
+<table>
+<tr><td> 
+<b>Username &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type=text name=unm id=u></td></tr>
+<tr><td><b>Password &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type=password name=pwd id=p></td></tr>
+<tr><td>
+<b>Re-enter Pin &nbsp <input type=password name=pwd id=Repassword></td></tr>
+
+<tr><td><br>
+ <input  type=reset name=clear id=c value=Reset><! &nbsp Non-breaking Space>	
+ <input id=sub type=submit  value="Sign-in" ></td></tr>
+
+</table>
+</form>
+</div>
+
+<p><a href="https://www.google.com/" style="color:lightblue;"> To Search  </a> </p>    <! paragraph set the link to the bottom>      
+</body>
+
+
+</html>
+
